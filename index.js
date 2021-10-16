@@ -2,6 +2,8 @@
 import express from "express";
 //import mongoose
 import mongoose from "mongoose";
+//import route
+import route from "./routes/index.js";
 const app = express();
 
 // connect ke database mongoDB
@@ -13,8 +15,6 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database Connected"));
 
-app.get("/", (req, res) => {
-  res.send("Welcome");
-});
+app.use("/product", route);
 
 app.listen("3000", () => console.log("Server running at port: 3000"));
