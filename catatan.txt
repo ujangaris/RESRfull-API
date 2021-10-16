@@ -5,3 +5,12 @@
     npm install mongoose
 4. install nodemon:
     npm install --save-dev nodemon
+
+5.memanggil  express menggunakan  jsx : pada file package.json => 
+            {
+        "name": "RESTful-API",
+        "version": "1.0.0",
+        "description": "",
+        "type": "module", => tambahkan code ini
+        
+6. untuk menjalankan servernya : npx nodemon index.js
