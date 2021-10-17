@@ -14,3 +14,5 @@
         "type": "module", => tambahkan code ini
         
 6. untuk menjalankan servernya : npx nodemon index.js
+7. agar API dpt diakses dari luar domain:
+    - npm install cors
