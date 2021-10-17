@@ -3,6 +3,7 @@ import {
   getProducts,
   saveProduct,
   updateProduct,
+  getProductsById,
 } from "../controllers/productController.js";
 
 const router = Express.Router();
@@ -10,7 +11,7 @@ const router = Express.Router();
 // Route get All Products
 router.get("/", getProducts);
 // Route get single Product
-router.get("/:id");
+router.get("/:id", getProductsById);
 // Route CREATE Product
 router.post("/", saveProduct);
 // Route UPDATE Product

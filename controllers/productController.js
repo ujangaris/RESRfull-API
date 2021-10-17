@@ -10,6 +10,15 @@ export const getProducts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// function get single Product
+export const getProductsById = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.json(product);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
 // function Create Product
 export const saveProduct = async (req, res) => {
@@ -22,7 +31,7 @@ export const saveProduct = async (req, res) => {
   }
 };
 
-// function Create Product
+// function Update Product
 export const updateProduct = async (req, res) => {
   try {
     const updatedProduct = await Product.updateOne(
