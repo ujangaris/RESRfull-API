@@ -20,3 +20,6 @@ Content-Type: application/json
     "title": "Product updated",
     "price": 2000
 }
+
+###
+DELETE http://localhost:3000/product/616b7e0574165049174ae6ab

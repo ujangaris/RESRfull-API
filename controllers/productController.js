@@ -43,3 +43,15 @@ export const updateProduct = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+// function Delete Product
+export const deleteProduct = async (req, res) => {
+  try {
+    const deletedProduct = await Product.deleteOne(
+      { _id: req.params.id }
+    );
+    res.status(200).json(deletedProduct);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
