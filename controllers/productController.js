@@ -7,6 +7,17 @@ export const getProducts = async (req, res) => {
     const products = await Product.find();
     res.json(products);
   } catch (error) {
-    res.json({ message: error.message });
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// function Create Product
+export const saveProduct = async (req, res) => {
+  const product = new Product(req.body);
+  try {
+    const savedProduct = await product.save();
+    res.status(201).json(savedProduct);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
   }
 };

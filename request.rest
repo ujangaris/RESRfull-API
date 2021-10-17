@@ -2,3 +2,9 @@ GET http://localhost:3000/product
 
 ###
 POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "title": "Product 2",
+    "price": 2000
+}

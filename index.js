@@ -15,6 +15,8 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database Connected"));
 
+// middleware
+app.use(express.json());
 app.use("/product", route);
 
 app.listen("3000", () => console.log("Server running at port: 3000"));
